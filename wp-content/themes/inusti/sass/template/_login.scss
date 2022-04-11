@@ -1,0 +1,7 @@
+.logged-in.admin-bar{
+  @include media-breakpoint-down(md){
+   .gva-offcanvas-content.mobile{
+      padding-top: 30px;
+    }
+  }
+}

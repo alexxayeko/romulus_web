@@ -1,0 +1,384 @@
+.portfolio-filter{
+  margin-bottom: 15px;
+  ul.nav-tabs{
+    display: inline-block;
+    text-align: center;
+    border: none;
+    width: 100%; 
+    > li{
+      padding: 5px 10px 0;
+      > a{
+        font-weight: 500;
+        color: #868686;
+        @include transition(all 0.35s);
+        padding: 0;
+        font-size: 18px;
+        position: relative;
+        z-index: 11;
+        &:after{
+          content: '';
+          @include size(0, 2px);
+          background: $theme-color;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: -1px;
+          transition: all 0.35s;
+        }
+        .count{
+          border-radius: 50%;
+          z-index: 1;
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          font-size: 12px;
+          opacity: 0;
+          transition: all 0.35s;
+        }
+        &:hover, &.active{
+          color: $black;
+          &:after{
+            width: 100%;
+          }
+          .count{
+            top: -10px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .view-all{
+    float: right;
+  }
+}
+
+.portfolio-v1{
+  position: relative;
+  overflow: hidden;
+  max-width: 510px;
+  margin: 0 auto 20px;
+  .images{
+    position: relative;
+    text-align: center;
+    a.link-image-content{
+      display: block;
+      &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%, 100%); 
+        background: $black;
+        @include opacity(0);
+        @include scale(0.96);
+        z-index: 1;
+        @include transition(all 0.35s);
+      }
+    }
+    .link{
+      @include opacity(0);
+      @include transition(all 0.45s);
+      @include size(36px, 36px);
+      background: $white;
+      line-height: 36px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 99;
+      margin-top: 45px;
+      font-size: 14px;
+      &:hover{
+        background: $theme-color;
+        color: $white;
+      }
+    }
+  }
+  .portfolio-content{
+    margin-bottom: 30px;
+    text-align: left;
+    .content-inner{
+      padding: 30px;
+      margin-left: 25px;
+      margin-right: 25px;
+      margin-top: -100px;
+      background: $white;
+      position: relative;
+      z-index: 9;
+      box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s;
+      border: 1px solid $border-color;
+      @include media-breakpoint-down(lg){
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: -80px;
+      }
+      .portfolio-meta{
+        font-size: 14px;
+        padding-top: 2px;
+        padding-bottom: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        &:after{
+          content: '';
+          @include size(15px, 2px);
+          background: $theme-color;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+        a{
+          color: $body-color;
+        }
+      }
+      .title{  
+        display: block;
+        font-size: 24px;
+        margin: 0 0 4px;
+        max-width: 200px;
+        @include media-breakpoint-down(lg){
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  &:hover, &:active, &:focus{
+    .portfolio-content{
+      .content-inner{
+        background: $theme-color;
+        border-color: $theme-color;
+        .title{
+          a{
+            color: $white;
+          }
+        }
+        .portfolio-meta{
+          a{
+            color: $white;
+          }
+          &:after{
+            background: $white;
+          }
+        }
+      }
+    }
+    .images{
+      a.link-image-content{
+        &:after{
+          @include opacity(0.8);
+          @include scale(1);
+        }
+      }
+      a.link{
+        @include opacity(1);
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.portfolio-v2{
+  margin: 0 auto 30px;
+  overflow: hidden;
+  position: relative;
+  .images{
+    position: relative;
+    text-align: center;
+    a.link-image-content{
+      display: block;
+      &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%, 100%); 
+        background: $theme-color;
+        @include opacity(0);
+        @include scale(0.5);
+        z-index: 1;
+        @include transition(all 0.35s); 
+      }
+    }
+    .link{
+      @include opacity(0);
+      @include transition(all 0.45s);
+      @include size(68px, 68px);
+      @include border-radius(50%);
+      @include transform(translateY(-150px));
+      background: $white;
+      line-height: 68px;
+      font-size: 22px;
+      position: absolute;
+      z-index: 99;
+      text-align: center;
+      top: 45px;
+      right: 45px;
+      &:hover{
+        color: $theme-color;
+        background: $white;
+      }
+    }
+  }
+  .portfolio-content{
+    position: absolute;
+    bottom: 40px;
+    left: 45px;
+    right: 45px;
+    text-align: left;
+    z-index: 10;
+    @include opacity(0);
+    @include transform(translateY(200px));
+    @include transition(all 300ms ease);
+    .title{  
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+      @include media-breakpoint-down(md){
+        font-size: 20px;
+      }
+      a {
+        color: $white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &:hover, &:active, &:focus{
+    .portfolio-content{
+      @include opacity(1);
+      @include transform(translateY(0px));
+    }
+    .images{
+      a.link-image-content{
+        &:after{
+          @include opacity(0.9);
+          @include scale(1);
+        }
+      }
+      a.link{
+        @include opacity(1);
+        @include transform(translateY(0px));
+      }
+    }
+  }
+}
+
+.no-gutter .portfolio-block{
+  margin-bottom: 0;
+}
+
+.owl-carousel{
+  .portfolio-v1, .portfolio-v2{
+    margin-bottom: 0;
+  }
+}
+
+.gva-portfolio-items{
+  float: left;
+  width: 100%;
+}
+.gsc-portfolio-carousel{
+  &.remove-padding{
+    .init-carousel-owl{
+      margin-left: 0!important;
+      margin-right: 0!important;
+      .owl-item{
+        padding-left: 0!important;
+        padding-right: 0!important;
+      }
+    }
+  }
+}
+
+.single-portfolio{
+  .portfolio-content{
+    float: left;
+    width: 100%;
+    margin: 30px 0 30px;
+    .title{
+      margin: 20px 0 25px;
+      font-size: 30px;
+    }
+    .portfolio-information{
+      float: right;
+      margin: 22px 0 20px 25px;
+      padding: 20px 28px;
+      min-width: 280px;
+      border: 1px solid $border-color;
+      text-align: left;
+      line-height: 28px;
+      @include media-breakpoint-down(lg){
+          padding: 20px;
+      }
+      @media(max-width: 600px){
+          width: 100%;
+          min-width: 100%;
+          margin-bottom: 30px;
+      }
+      ul{
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li{
+          padding: 9px 0;
+          .label{
+            font-size: 14px;
+            min-width: 110px;
+            display: block;
+            text-align: left;
+            color: $black;
+            font-weight: 700;
+            width: 100%;
+          }
+          }
+      }
+    }
+    }
+  .portfolio-thumbnail{
+    .owl-carousel{
+      .owl-dots{
+        margin-top: 25px;
+      }
+    }
+    .gallery-item{
+      position: relative;
+      .photo-gallery{
+        position: absolute;
+        @include size(100%, 100%);
+        top: 0;
+        left: 0;
+        z-index: 11;
+        background: rgba(0, 0, 0, 0.6);
+        color: $white;
+        text-align: center;
+        opacity: 0;
+        i{
+          font-size: 36px;
+          position: relative;
+          top: 50%;
+          margin-top: -20px;
+        }
+      }
+      &:hover{
+        .photo-gallery{
+          opacity: 1;
+        }
+      }
+    }
+    }
+    .post-navigation{
+    margin-bottom: 50px;
+    }
+}
+
+.single.single-portfolio{
+  .main-page-content{
+    padding: 75px 0 50px;
+    @include media-breakpoint-down(md){
+      padding: 35px 0 15px;
+    }
+  }
+}

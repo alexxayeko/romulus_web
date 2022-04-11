@@ -1,0 +1,130 @@
+.gsc-heading{
+  display: block;
+  width: 100%;
+  @include clearfix();
+  .heading-icon{
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .heading-video{
+    margin-bottom: 50px;
+    .video-link{
+      display: inline-block;
+      font-size: 24px;
+      color: $white;
+      background: $theme-color;   
+      text-align: center;
+      position: relative;
+      @include transition(all 0.35s);
+      &::before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #fff;
+        opacity: 0;
+        @include animation(pulse-border-2 1.5s linear infinite);
+      }
+      &::after{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #fff;
+        opacity: 0;
+        @include animation(pulse-border 1s linear infinite);
+      }
+      &:hover{
+        @include scale(0.9);
+      }
+    }
+  }
+  .title{
+    font-size: 50px;
+    line-height: 60px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 40px; 
+    @media (max-width: 1024px) {      
+      font-size: 40px;
+      line-height: 50px;
+      margin-bottom: 20px;
+    }
+    @include media-breakpoint-down(sm){
+      font-size: 30px;
+      line-height: 40px;
+    }
+    .highlight, strong{
+      color: $theme-color;
+    }
+  }
+  .sub-title{
+    color: $body-color;
+    font-size: 16px;
+    line-height: 16px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-weight: 500;
+    > span{
+      position: relative;
+      &:after{
+        content: '';
+        @include size(100%, 2px);
+        background: $theme-color;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        z-index: 1;
+      }
+    }
+  }
+  .title-desc {
+    font-size: 18px;
+    line-height: 36px;
+    
+  }
+  &.align-center{
+    text-align: center;
+    .content-inner{
+      margin: 0 auto;
+    }
+  }
+  &.align-left{
+    text-align: left;
+    .title-icon{
+      padding-left: 50px;
+    }
+  }
+  &.align-right{
+    text-align: right;
+    .title-desc{
+      float: right;
+      width: 100%;
+      text-align: right;      
+    }
+    .title-icon{
+      padding-right: 50px;
+    }
+  }
+  &.box-align-center{
+    .content-inner{
+      margin: 0 auto;
+    }
+  }
+  &.box-align-left{
+    .content-inner{
+    
+    }
+  }
+  &.box-align-right{
+    .content-inner{
+      float: right;
+    }
+  }
+}

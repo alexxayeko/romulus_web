@@ -1,0 +1,10 @@
+[16-Sep-2021 08:44:33 UTC] WordPress database error Table 'wpda_ctf_feed_locator' already exists for query CREATE TABLE wpda_ctf_feed_locator (
+				id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                feed_id VARCHAR(50) DEFAULT '' NOT NULL,
+                post_id BIGINT(20) UNSIGNED NOT NULL,
+                html_location VARCHAR(50) DEFAULT 'unknown' NOT NULL,
+                shortcode_atts LONGTEXT NOT NULL,
+                last_update DATETIME
+            ); made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('wp_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, ctf_check_for_db_updates, CTF_Feed_Locator::create_table
+[16-Sep-2021 08:44:33 UTC] WordPress database error Duplicate key name 'feed_id' for query ALTER TABLE wpda_ctf_feed_locator ADD INDEX feed_id (feed_id) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('wp_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, ctf_check_for_db_updates, CTF_Feed_Locator::create_table
+[16-Sep-2021 08:44:33 UTC] WordPress database error Duplicate key name 'post_id' for query ALTER TABLE wpda_ctf_feed_locator ADD INDEX post_id (post_id) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('wp_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, ctf_check_for_db_updates, CTF_Feed_Locator::create_table

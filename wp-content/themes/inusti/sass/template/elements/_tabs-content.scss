@@ -1,0 +1,110 @@
+.fade{
+   &.active{
+      opacity: 1;
+   }
+}
+.gsc-tabs-content{
+   text-align: center;
+   .nav_tabs{
+      padding: 0;
+      list-style: none;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      > li{
+         float: left;
+         margin-right: 10px;
+         @include media-breakpoint-down(sm){
+            width: 100%;
+         }
+         a{
+            font-size: 16px;
+            font-weight: 700;
+            padding: 15px 20px;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            font-family: $headings-font-family;
+            &:before{
+               content: '';
+               @include size(100%, 3px);
+               background: $theme-color;
+               position: absolute;
+               top: 0;
+               left: 0;
+               z-index: 1;
+               transition: all 0.35s;
+            }
+            span{
+               position: relative;
+               z-index: 2;
+            }
+            &.active, &:hover{
+               color: $white;
+               &:before{
+                  height: 100%;
+               }
+            }
+         }
+      }
+   }
+   .tab-content{
+      text-align: left;
+      position: relative;
+      z-index: 9;
+      padding-top: 15px;
+      .tab-pane{
+         .tab-image{
+            width: 46%;
+            float: left;
+            padding-right: 30px;
+            @include media-breakpoint-down(md){
+               padding-right: 0;
+               width: 100%;
+               text-align: center;
+            }
+         }
+         .tab-content-item{
+            width: 54%;
+            float: left;
+            padding-left: 30px;
+            font-size: 18px;
+            @include media-breakpoint-down(md){
+               padding-left: 0;
+               width: 100%;
+            }
+            .tab-item-title{
+               font-size: 20px;
+               font-weight: 700;
+               color: $black;
+               margin-bottom: 15px;
+            }
+            ul{
+               padding: 0;
+               margin: 0;
+               list-style-type: none;
+               > li{
+                  padding-left: 30px;
+                  position: relative;
+                  &:after{
+                     content: '\f058';
+                     font-family: 'Font Awesome 5 Free';
+                     position: absolute;
+                     top: 0;
+                     left: 0;
+                     z-index: 1;
+                     color: $theme-color;
+                     font-weight: 700;
+                  }
+               }
+            }
+            &.no_image{
+               width: 100%;
+               padding-left: 0;
+            }
+         }
+      }
+   }
+}

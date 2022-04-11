@@ -1,0 +1,223 @@
+.gsc-image-content{
+  &.skin-v1{
+    text-align: center;
+    position: relative;    
+    padding-bottom: 120px;
+    max-width: 580px;
+    margin: 0 auto;
+    @include media-breakpoint-up(md){
+      padding-bottom: 100px;
+    }
+    .content-box {
+      position: absolute;
+      @include size(172px, 172px);
+      background: $theme-color;
+      color: #fff;
+      @include border-radius(50%);
+      z-index: 20;
+      top: 45px;
+      left: 0px;
+      padding-top: 30px;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 600;
+      text-align: center;
+      @media (max-width:1024px){
+        @include size(120px, 120px);
+        font-size: 16px;
+        padding-top: 14px;
+      }
+      @media (max-width:480px){
+        position: initial;
+        margin: 0 auto 30px;
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        right: 17px;
+        bottom: 16px;
+        border-bottom: 20px solid $theme-color;
+        border-left: 20px solid transparent;
+        @media (max-width: 1024px){
+          right: 13px;
+          bottom: 10px;
+        }
+      }
+    }
+    .icon{
+      font-size: 60px;
+      margin-bottom: 5px;
+      font-weight: 500;
+      @media (max-width:1024px){
+        font-size: 40px;
+      }
+    }
+    .title {
+      margin-top: 10px;
+      line-height: 20px;
+    }
+    .image{
+      position: relative;
+      overflow: hidden;
+      text-align: right;
+      img{
+        transition: all 3s;
+        display: inline-block;        
+      }
+      &:hover{
+        img{
+          @include scale(1.05);
+        }
+      }
+    }
+    .image-second{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 11;
+      max-width: 60%;
+      width: 390px;
+      overflow: hidden;  
+      img{
+        transition: all 3s;
+      }
+      &:hover{
+        img{
+          @include scale(1.05);
+        }
+      }
+    }
+  }
+
+  &.skin-v2{
+    padding: 30px;
+    background: $theme-color;
+    position: relative;
+    @include media-breakpoint-up(sm){
+      display: inline-flex;
+      align-items: center;
+      padding: 60px; 
+      max-width: 495px;         
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-top: 60px solid $theme-color;
+      border-left: 60px solid transparent;
+      @include media-breakpoint-down(xs){
+        border-top: 30px solid $theme-color;
+        border-left: 30px solid transparent;
+      }
+    }
+    .title{
+      @include media-breakpoint-up(sm){
+        order: 2;
+        padding-left: 30px;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+      }
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 34px;
+      color: $white;  
+    }
+    .image{
+      @include media-breakpoint-up(sm){  
+        min-width: 120px; 
+        overflow: hidden; 
+          -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+        margin-top: 0;        
+      }
+      margin-top: 20px;   
+    }
+  }
+  &.skin-v3{
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+    .image{
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      img{
+        @include transition(all 3s);
+      }
+    }  
+    .box-content{
+      background: $theme-color-2;
+      z-index: 1;
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      @include transition(all 0.35s);
+      max-width: 280px;
+      padding: 30px 45px;
+      font-size: 18px;
+      text-align: center; 
+      .title{
+        margin: 0;
+        font-size: 40px;
+        color: $black;
+        a{
+          color: $white;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+      .desc{
+        font-size: 18px;
+        color: $black;
+      }
+    }
+  }
+  &.skin-v4{    
+    position: relative;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 30px 45px;
+    border: 1px solid $border-color;
+    @include media-breakpoint-down(lg){
+      padding: 30px;
+    }
+    .image{
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      img{
+        @include transition(all 3s);
+      }
+    }  
+    .box-content{
+      background: $white;
+      z-index: 1;
+      @include transition(all 0.35s); 
+      text-align: center;
+      .title{
+        margin: 30px 0 0;
+        font-size: 20px;
+        color: $black;
+        line-height: 36px;
+      }
+      .desc{
+        margin-top: 5px;
+        color: $body-color;
+      }
+      .read-more{
+        margin-top: 28px;
+        svg{
+          width: 20px;
+          height: auto;
+          fill: $theme-color;
+        }
+      }
+    }
+  }
+}

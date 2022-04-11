@@ -1,0 +1,71 @@
+.gsc-icon-box-group{
+  &.style-1{
+    .icon-box-item-content{
+      position: relative;
+      overflow: hidden;
+     .icon-box-item-inner{
+        position: relative;
+        @include clearfix();
+        text-align: left;
+        background: $white;
+        padding: 50px 35px 80px;
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        margin: 0 auto;
+        background: #F4F4F5;
+        @include media-breakpoint-down(lg){
+          padding: 40px 30px 65px;
+        }
+        .box-icon{
+          display: inline-block;
+          line-height: 1;
+          i{
+            color: $theme-color;
+            font-size: 50px;
+          }
+          svg{
+            fill: $theme-color;
+            height: auto;
+            transition: all 0.35s;
+          }
+        }
+        .title{
+          color: $black;
+          font-size: 20px;
+          display: block;
+          line-height: 1.4;
+          margin-bottom: 0;
+          text-transform: none;
+        }
+        .content-inner{
+          margin-top: 20px;
+          position: relative;
+        }
+      }
+      &:hover, &.active{
+        .icon-box-item-inner{
+          .icon-inner{
+            .box-icon{
+              svg, i{
+                animation: beat 1.5s ease 0s infinite;
+              }
+            }
+          }
+        }
+      }
+      .link-overlay{
+        position: absolute;
+        @include size(100%, 100%);
+        top: 0;
+        left: 0;
+        z-index: 11;
+      }
+    }
+    .owl-dots{
+      position: absolute;
+      bottom: 45px;
+      right: 45px;
+      z-index: 11;
+      width: auto;
+    }
+  }
+}
